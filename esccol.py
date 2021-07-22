@@ -3,14 +3,7 @@ import csv
 from typing import List
 from dataclasses import dataclass
 
-echo(style('コンソール画面の背景は白くすること'))
-NAMES = [
-    'black', 'white',
-    'red', 'green', 'yellow', 'blue', 'magenta', 'cyan',
-    'bright_red', 'bright_green', 'bright_yellow', 'bright_blue', 'bright_magenta', 'bright_cyan',
-]
-name2text = {name: style('■', fg=name) for name in NAMES}
-number2text = {number: name2text[NAMES[number]] for number in range(len(NAMES))}
+echo(style('コンソール画面の背景は白くすること', fg='bright_green'))
 
 
 def ansi_block_esccode(color_name: str) -> str:
@@ -33,6 +26,23 @@ ESCCODES = [
     ansi_block_esccode('bright_blue'),
     ansi_block_esccode('bright_magenta'),
     ansi_block_esccode('bright_cyan'),
+]
+ESCCOL_NAMES = [
+    'esc_black',
+    'esc_white',
+    'background',
+    'esc_red',
+    'esc_green',
+    'esc_yellow',
+    'esc_blue',
+    'esc_magenta',
+    'esc_cyan',
+    'esc_bright_red',
+    'esc_bright_green',
+    'esc_bright_yellow',
+    'esc_bright_blue',
+    'esc_bright_magenta',
+    'esc_bright_cyan',
 ]
 
 
